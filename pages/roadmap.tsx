@@ -2,7 +2,7 @@ import Essentials from '@components/Essentials';
 import RoadmapScreen from '@screens/Roadmap';
 
 const title = 'Roadmap';
-const description = 'Description';
+const description = 'Earn Ripple (XRP) and PancakeSwap (Cake) every hour';
 
 const Roadmap = () => {
   return (
