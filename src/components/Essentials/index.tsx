@@ -16,19 +16,17 @@ type Props = {
   description: string;
   children: ReactNode;
   pageImage?: string;
-  isCharity?: boolean;
 };
 
 const Essentials: FC<Props> = ({
   title,
   description,
   children,
-  isCharity,
-  pageImage = 'https://charity.higorgeous.io/page-image.png',
+  pageImage = 'https://www.xrpancake.com/page-image.png',
 }) => {
   const router = useRouter();
 
-  const pageUrl = `https://charity.higorgeous.io/${router.pathname}`;
+  const pageUrl = `https://www.xrpancake.com/${router.pathname}`;
   console.log(pageUrl);
 
   const schemaOrgJSONLD = [
@@ -36,7 +34,7 @@ const Essentials: FC<Props> = ({
       '@context': `http://schema.org`,
       '@type': `WebSite`,
       url: pageUrl,
-      name: `${title} | Gorgeous BSC Token`,
+      name: `${title} | XRPP Token`,
     },
   ];
 
@@ -44,7 +42,7 @@ const Essentials: FC<Props> = ({
     '@context': `http://schema.org`,
     '@type': `WebPage`,
     url: pageUrl,
-    name: `${title} | Gorgeous BSC Token`,
+    name: `${title} | XRPP Token`,
   });
 
   return (

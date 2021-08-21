@@ -1,10 +1,9 @@
-import { useState, useEffect, createContext, useCallback } from 'react';
+import { useState, createContext, useCallback } from 'react';
 import Web3 from 'web3';
 
 import isClientSide from '@utils/isClientSide';
 
 import { tokenABI, gorgeousAddress } from './constants';
-import { useFlags } from '@atlaskit/flag';
 
 export const Web3Context = createContext<{
   isHolder: boolean;
@@ -23,8 +22,6 @@ export const Web3Provider = ({ children }: any) => {
   const [account, setAccount] = useState('');
   const [web3Enabled, setWeb3Enabled] = useState(false);
 
-  const { showFlag } = useFlags();
-
   let web3: Web3 = new Web3('https://bsc-dataseed1.binance.org:443');
 
   const onWeb3Click = async () => {
@@ -37,20 +34,10 @@ export const Web3Provider = ({ children }: any) => {
         setWeb3Enabled(true);
         checkAccount();
       } catch (e) {
-        showFlag({
-          icon: null,
-          appearance: 'error',
-          title: `For more votes, connect to Gorgeous`,
-          isAutoDismiss: true,
-        });
+        console.log(e);
       }
     } else {
-      showFlag({
-        icon: null,
-        appearance: 'error',
-        title: `You need a web3 wallet extension to connect`,
-        isAutoDismiss: true,
-      });
+      console.log('success');
     }
     return false;
   };
@@ -63,21 +50,7 @@ export const Web3Provider = ({ children }: any) => {
       const balance = await tokenInst.methods.balanceOf(address).call();
       setIsHolder(balance > 0);
       setAccount(accounts[0]);
-      if (balance > 0) {
-        showFlag({
-          icon: null,
-          appearance: 'success',
-          title: `Your wallet is looking Gorgeous`,
-          isAutoDismiss: true,
-        });
-      } else {
-        showFlag({
-          icon: null,
-          appearance: 'error',
-          title: `You have no Gorgeous in your wallet`,
-          isAutoDismiss: true,
-        });
-      }
+      console.log(balance);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [web3.eth]);
