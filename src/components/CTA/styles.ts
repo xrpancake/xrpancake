@@ -81,6 +81,9 @@ export const Button = styled.a`
   cursor: pointer;
   display: inline-block;
   margin: 10px;
+  &.hero {
+    margin: 30px 0;
+  }
   span {
     display: inline-block;
     border-radius: 4px;

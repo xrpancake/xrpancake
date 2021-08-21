@@ -1,10 +1,10 @@
-import Hero from '@components/Hero';
+import HeroIndex from '@components/HeroIndex';
 
 import { Wrapper } from './styles';
 
 const TokenomicsScreen = () => (
   <Wrapper>
-    <Hero>About XRP Pancake</Hero>
+    <HeroIndex />
   </Wrapper>
 );
 
