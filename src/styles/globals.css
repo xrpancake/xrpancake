@@ -1,0 +1,191 @@
+/* Theme colors */
+body,
+body[data-theme='light'] {
+  --color-text-primary: #002358;
+  --color-text-secondary: #214a88;
+  --color-text-active: #0060ff;
+  --color-text-error: #ff5630;
+  --color-text-warning: #ffbd30;
+  --color-text-valid: #40f193;
+  --color-bg-primary: #ffffff;
+  --color-bg-element: #d4e1f3;
+  --color-select-background: #ffffff;
+  --color-input-background: #ffffff;
+  --color-input-backgroundFocus: #d4e1f3;
+  --color-input-backgroundHover: #d4e1f3;
+  --color-input-backgroundDisabled: #ffffff;
+  --color-input-border: #214a88;
+  --color-input-borderFocus: #0060ff;
+  --color-button-primary: #6bffb0;
+  --color-button-primaryHover: #40f193;
+  --color-button-secondary: #001b44;
+  --color-button-secondaryHover: #214a88;
+  --color-button-alternative: #d4e1f3;
+  --color-button-alternativeHover: #bdc8d8;
+}
+
+body[data-theme='dark'] {
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a2c3f5;
+  --color-text-active: #ffffff;
+  --color-text-error: #ff5630;
+  --color-text-warning: #ffbd30;
+  --color-text-valid: #40f193;
+  --color-bg-primary: #001b44;
+  --color-bg-element: #032c6b;
+  --color-select-background: #00132f;
+  --color-input-background: #001b44;
+  --color-input-backgroundFocus: #032c6b;
+  --color-input-backgroundHover: #032c6b;
+  --color-input-backgroundDisabled: #001b44;
+  --color-input-border: #a2c3f5;
+  --color-input-borderFocus: #0060ff;
+  --color-button-primary: #6bffb0;
+  --color-button-primaryHover: #40f193;
+  --color-button-secondary: #001b44;
+  --color-button-secondaryHover: #214a88;
+  --color-button-alternative: #032c6b;
+  --color-button-alternativeHover: #214a88;
+}
+
+.root,
+body,
+html {
+  min-height: 100%;
+  width: 100%;
+  min-width: 320px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-size-adjust: none;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: all 0.25s ease-in-out;
+}
+
+@media (max-width: 567px) {
+  *.mobile-hide {
+    display: none !important;
+  }
+  *.mobile-show {
+    display: inherit;
+  }
+}
+
+@media (min-width: 568px) {
+  *.mobile-show {
+    display: none !important;
+  }
+  *.mobile-hide {
+    display: inherit;
+  }
+}
+
+@media (max-width: 1023px) {
+  *.tablet-hide {
+    display: none !important;
+  }
+  *.tablet-show {
+    display: inherit;
+  }
+}
+
+@media (min-width: 1024px) {
+  *.tablet-show {
+    display: none !important;
+  }
+  *.tablet-hide {
+    display: inherit;
+  }
+}
+
+p.text {
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 800px;
+  letter-spacing: 0.025em;
+  text-align: center;
+  margin: 20px auto 30px;
+  line-height: 1.8;
+  transition: color 0.25s ease-in-out;
+}
+
+p.text a {
+  color: var(--color-text-primary) !important;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  p.text {
+    font-size: 16px;
+    margin: 10px auto 30px;
+    padding: 0 52px;
+  }
+}
+@media (max-width: 568px) {
+  p.text {
+    font-size: 14px;
+    margin: 10px 20px 30px;
+    padding: 0;
+  }
+}
+
+div.tooltip-container {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: #002358;
+  padding-top: 7px;
+  box-shadow: 0 5px 25px rgb(0 17 36 / 15%);
+  border: none;
+}
+
+div.tooltip-arrow::before {
+  border-style: none;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  background: var(--color-bg-primary) !important;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 99;
+}
+
+.ReactModal__Content {
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-text-primary) !important;
+  transition: all 0.25s ease-in-out;
+}
+
+@media (max-width: 567px) {
+  .ReactModal__Content {
+    border: none !important;
+  }
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
