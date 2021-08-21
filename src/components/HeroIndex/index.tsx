@@ -21,6 +21,7 @@ const HeroIndex: React.FC = () => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Buy XRPP Token"
+              title="Buy XRPP Token"
             >
               <span>
                 Buy XRPP Token

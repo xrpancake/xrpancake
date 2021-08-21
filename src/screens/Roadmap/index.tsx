@@ -5,6 +5,7 @@ import { Wrapper } from './styles';
 const RoadmapScreen = () => (
   <Wrapper>
     <Hero>Roadmap</Hero>
+    Coming shortly
   </Wrapper>
 );
 

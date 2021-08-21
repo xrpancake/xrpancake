@@ -5,6 +5,7 @@ import { Wrapper } from './styles';
 const DashboardScreen = () => (
   <Wrapper>
     <Hero>Dashboard</Hero>
+    Coming shortly
   </Wrapper>
 );
 
