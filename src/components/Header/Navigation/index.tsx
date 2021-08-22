@@ -14,11 +14,7 @@ const navItems: Array<ItemProps> = [
     href: `/`,
   },
   {
-    title: `Roadmap`,
-    href: `/roadmap`,
-  },
-  {
-    title: `Rewards Dashboard`,
+    title: `Dashboard`,
     href: `/dashboard`,
   },
 ];

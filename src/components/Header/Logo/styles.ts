@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
     margin-left: 30px;
   }
   @media (max-width: 568px) {
-    padding-left: 20px;
+    padding-left: 30px;
     margin: 0;
   }
   span {

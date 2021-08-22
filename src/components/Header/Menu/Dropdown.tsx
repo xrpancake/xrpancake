@@ -26,11 +26,7 @@ const navItems: Array<ItemProps> = [
     href: `/`,
   },
   {
-    title: `Roadmap`,
-    href: `/roadmap`,
-  },
-  {
-    title: `Rewards Dashboard`,
+    title: `Dashboard`,
     href: `/dashboard`,
   },
 ];
@@ -47,6 +43,10 @@ const externalItems: Array<ItemProps> = [
   {
     title: `📈 Watch our chart`,
     href: `https://poocoin.app/tokens/0x5760ed58d66ba764c4c3073fc58aa471ea442efc`,
+  },
+  {
+    title: `📖 Read our white paper`,
+    href: `https://www.xrpancake.com/whitepaper.pdf`,
   },
   {
     title: `🔒 LP Locked on Mudra`,

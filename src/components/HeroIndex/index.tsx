@@ -1,7 +1,8 @@
 import { Button } from '@components/CTA/styles';
+import ChevronRight from '@components/CTA/ChevronRight';
+
 import { Container, Left, Right, Wrapper } from './styles';
 import Video from './Video';
-import ChevronRight from '../CTA/ChevronRight';
 
 const HeroIndex: React.FC = () => (
   <Wrapper>

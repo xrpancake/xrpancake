@@ -27,8 +27,8 @@ const Video: FC = () => {
         <Image
           src="/hero.gif"
           alt="AMA with Whale-Coin"
-          width="450px"
-          height="450px"
+          width="500px"
+          height="500px"
         />
       </ImageWrapper>
     </>

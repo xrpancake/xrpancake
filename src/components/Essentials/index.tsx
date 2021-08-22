@@ -61,15 +61,21 @@ const Essentials: FC<Props> = ({
         </script>
 
         {/* OpenGraph tags */}
-        <meta property="og:title" content={`${title} | Gorgeous BSC Token`} />
+        <meta
+          property="og:title"
+          content={`${title} | XRP Pancake BSC Token`}
+        />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:image" content={pageImage} />
         <meta property="og:description" content={description} />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@GorgeousToken" />
-        <meta name="twitter:title" content={`${title} | Gorgeous BSC Token`} />
+        <meta name="twitter:creator" content="@XRPPancake" />
+        <meta
+          name="twitter:title"
+          content={`${title} | XRP Pancake BSC Token`}
+        />
         <meta name="twitter:image" content={pageImage} />
         <meta name="twitter:description" content={description} />
       </Head>

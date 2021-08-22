@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.section`
   & > div {
-    height: calc(100vh - 100px);
+    height: 100%;
+    min-height: 80vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -26,8 +27,8 @@ export const Container = styled.div`
     flex-direction: column;
   }
   @media (max-width: 567px) {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 `;
 
