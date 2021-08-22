@@ -1,7 +1,42 @@
+import CardGrid from '@components/CardGrid';
+import Hero from '@components/Hero';
 import HeroIndex from '@components/HeroIndex';
 import Section from '@components/Section';
 
 import { Wrapper } from './styles';
+
+const cards = [
+  {
+    id: 1,
+    title: `5% reflection In XRP`,
+    text: `5% of every transaction redistributed to all holders. Hold $XRPP tokens, earn XRP. `,
+  },
+  {
+    id: 2,
+    title: `5% reflection In CAKE`,
+    text: `5% of every transaction redistributed to all holders. Hold $XRPP tokens, earn CAKE. `,
+  },
+  {
+    id: 3,
+    title: `Paid every 60 minutes`,
+    text: `Your reflection in XRP and CAKE rewards are automatically sent to your wallet every 60 minutes. `,
+  },
+  {
+    id: 4,
+    title: `3% Auto liquidity pool`,
+    text: `To help create a price floor, 3% of every transaction is converted into liquidity for Pancakeswap.`,
+  },
+  {
+    id: 5,
+    title: `Locked and secure`,
+    text: `The initial liquidity provided is locked with Mudra Liquidity Locker for 5 months.`,
+  },
+  {
+    id: 6,
+    title: `Ambitious marketing`,
+    text: `3% of every transaction will facilitate the operational efforts in growing XRPP and it's community.`,
+  },
+];
 
 const sections = [
   {
@@ -28,7 +63,7 @@ const sections = [
       </span>
     ),
     color: `--color-section-one`,
-    image: `/768.png`,
+    image: `/security.png`,
     anchor: {
       text: 'Read whitepaper',
       href: 'https://www.xrpancake.com/whitepaper.pdf',
@@ -55,7 +90,7 @@ const sections = [
         </p>
       </span>
     ),
-    image: `/768.png`,
+    image: `/rewards.png`,
     color: `--color-section-two`,
     anchor: {
       text: 'View our contract',
@@ -81,7 +116,7 @@ const sections = [
         </p>
       </span>
     ),
-    image: `/768.png`,
+    image: `/telegram.png`,
     color: `--color-section-three`,
     anchor: {
       text: 'Join our Telegram',
@@ -93,6 +128,8 @@ const sections = [
 const TokenomicsScreen = () => (
   <Wrapper>
     <HeroIndex />
+    <Hero>Big vision. Bigger rewards.</Hero>
+    <CardGrid cards={cards} />
     {sections.map((i) => (
       <Section {...i} key={i.id} />
     ))}
