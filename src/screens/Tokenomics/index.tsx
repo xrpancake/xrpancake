@@ -3,6 +3,17 @@ import Hero from '@components/Hero';
 import HeroIndex from '@components/HeroIndex';
 import Section from '@components/Section';
 
+import CakeIcon from '@components/Icons/Cake';
+import XrpIcon from '@components/Icons/Xrp';
+import TimeIcon from '@components/Icons/Time';
+import LiquidityIcon from '@components/Icons/Liquidity';
+import LockIcon from '@components/Icons/Lock';
+import MarketingIcon from '@components/Icons/Marketing';
+
+import SafeIcon from '@components/Icons/Safe';
+import RewardIcon from '@components/Icons/Reward';
+import TelegramIcon from '@components/Icons/Telegram';
+
 import { Wrapper } from './styles';
 
 const cards = [
@@ -10,31 +21,37 @@ const cards = [
     id: 1,
     title: `5% reflection In XRP`,
     text: `5% of every transaction redistributed to all holders. Hold $XRPP tokens, earn XRP. `,
+    icon: <XrpIcon />,
   },
   {
     id: 2,
     title: `5% reflection In CAKE`,
     text: `5% of every transaction redistributed to all holders. Hold $XRPP tokens, earn CAKE. `,
+    icon: <CakeIcon />,
   },
   {
     id: 3,
     title: `Paid every 60 minutes`,
     text: `Your reflection in XRP and CAKE rewards are automatically sent to your wallet every 60 minutes. `,
+    icon: <TimeIcon />,
   },
   {
     id: 4,
     title: `3% Auto liquidity pool`,
     text: `To help create a price floor, 3% of every transaction is converted into liquidity for Pancakeswap.`,
+    icon: <LiquidityIcon />,
   },
   {
     id: 5,
     title: `Locked and secure`,
     text: `The initial liquidity provided is locked with Mudra Liquidity Locker for 5 months.`,
+    icon: <LockIcon />,
   },
   {
     id: 6,
     title: `Ambitious marketing`,
     text: `3% of every transaction will facilitate the operational efforts in growing XRPP and it's community.`,
+    icon: <MarketingIcon />,
   },
 ];
 
@@ -63,7 +80,7 @@ const sections = [
       </span>
     ),
     color: `--color-section-one`,
-    image: `/security.png`,
+    image: <SafeIcon />,
     anchor: {
       text: 'Read whitepaper',
       href: 'https://www.xrpancake.com/whitepaper.pdf',
@@ -90,7 +107,7 @@ const sections = [
         </p>
       </span>
     ),
-    image: `/rewards.png`,
+    image: <RewardIcon />,
     color: `--color-section-two`,
     anchor: {
       text: 'View our contract',
@@ -116,7 +133,7 @@ const sections = [
         </p>
       </span>
     ),
-    image: `/telegram.png`,
+    image: <TelegramIcon />,
     color: `--color-section-three`,
     anchor: {
       text: 'Join our Telegram',

@@ -9,6 +9,9 @@ export const Wrapper = styled.section`
   @media screen and (min-width: 768px) {
     padding: 0 20px;
   }
+  @media screen and (max-width: 768px) {
+    padding: 0 30px;
+  }
 `;
 
 export const Container = styled.div`
@@ -32,8 +35,6 @@ export const Card = styled.div`
   grid-column-start: auto;
   grid-row-start: auto;
   color: var(--color-text-primary);
-  background-size: cover;
-  background-position: center;
   transition: all 0.25s ease-in-out;
   padding: 15px;
   h2 {
@@ -41,5 +42,38 @@ export const Card = styled.div`
   }
   p {
     color: var(--color-text-secondary);
+  }
+`;
+
+export const IconWrapper = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  svg {
+    width: 100%;
+    height: 100%;
+    path {
+      fill: var(--color-text-secondary);
+      transition: all 0.25s ease-in-out;
+      &.cakeLogo0 {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        fill: #633001;
+      }
+      &.cakeLogo1 {
+        fill: #fedc90;
+      }
+      &.cakeLogo2 {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        fill: #d1884f;
+      }
+      &.cakeLogo3 {
+        fill: #633001;
+      }
+    }
   }
 `;

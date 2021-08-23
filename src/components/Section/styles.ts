@@ -44,6 +44,21 @@ export const ImageWrapper = styled.div`
     width: 100%;
     margin: 0 0 30px;
   }
+  svg {
+    width: 100%;
+    overflow: hidden;
+    path {
+      &.background {
+        fill: var(--color-section-svg-bg);
+      }
+      &.elements {
+        fill: var(--color-section-svg-element);
+      }
+      &.lines {
+        fill: var(--color-text-primary);
+      }
+    }
+  }
 `;
 
 export const Text = styled.div`

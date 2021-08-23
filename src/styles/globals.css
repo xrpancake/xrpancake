@@ -26,6 +26,8 @@ body[data-theme='light'] {
   --color-section-one: #effaff;
   --color-section-two: #dbf4ff;
   --color-section-three: #cce8f5;
+  --color-section-svg-bg: #ffffff;
+  --color-section-svg-element: #a4cadc;
 }
 
 body[data-theme='dark'] {
@@ -54,6 +56,8 @@ body[data-theme='dark'] {
   --color-section-one: #173fb5;
   --color-section-two: #11349c;
   --color-section-three: #032c6b;
+  --color-section-svg-bg: rgba(0, 0, 0, 0.1);
+  --color-section-svg-element: #2d4f8a;
 }
 
 .root,
@@ -208,4 +212,21 @@ div.tooltip-arrow::before {
 
 .ReactModal__Overlay--before-close {
   opacity: 0;
+}
+
+.cakeLogo0 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #633001;
+}
+.cakeLogo1 {
+  fill: #fedc90;
+}
+.cakeLogo2 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #d1884f;
+}
+.cakeLogo3 {
+  fill: #633001;
 }
