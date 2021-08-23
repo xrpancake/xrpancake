@@ -146,6 +146,11 @@ const TokenomicsScreen = () => (
   <Wrapper>
     <HeroIndex />
     <Hero>Big vision. Bigger rewards.</Hero>
+    <p className="text">
+      At a limited supply of 100,000,000,000 XRPP, the token was designed to
+      reward holders on every transaction, while large stakeholders (max.
+      2,000,000,000 XRPP) are penalised with higher selling fees.
+    </p>
     <CardGrid cards={cards} />
     {sections.map((i) => (
       <Section {...i} key={i.id} />
