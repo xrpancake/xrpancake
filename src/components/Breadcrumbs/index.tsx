@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 import { Wrapper, Scrollable, Container } from './styles';
