@@ -7,11 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  max-width: 450px;
   padding: 0 20px;
-  & > div {
-    max-width: 450px;
-  }
+  margin: 0 auto;
 `;

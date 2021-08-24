@@ -42,10 +42,11 @@ export const Card = styled.div`
     padding: 15px;
   }
   h2 {
+    color: var(--color-text-primary);
     font-size: 15px;
     margin: 0;
   }
-  p {
+  & > div {
     color: var(--color-text-secondary);
     margin: 0;
     span {

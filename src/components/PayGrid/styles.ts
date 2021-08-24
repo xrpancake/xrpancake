@@ -40,7 +40,7 @@ export const Card = styled.div`
     font-size: 15px;
     margin: 0;
   }
-  p {
+  .text {
     font-size: 25px;
     color: var(--color-text-secondary);
     margin: 0;

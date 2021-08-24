@@ -11,7 +11,7 @@ const PayGrid: React.FC<Props> = ({ items }) => {
         {items.map((i: any) => (
           <Card key={i.id}>
             <h2>{i.title}</h2>
-            <p>{i.text}</p>
+            <div className="text">{i.text}</div>
           </Card>
         ))}
       </Container>

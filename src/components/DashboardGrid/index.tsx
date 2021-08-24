@@ -13,7 +13,7 @@ const DashboardGrid: React.FC<Props> = ({ items }) => {
             <IconWrapper>{i.icon}</IconWrapper>
             <div className="text">
               <h2>{i.title}</h2>
-              <p>{i.value}</p>
+              <div>{i.value}</div>
             </div>
           </Card>
         ))}
