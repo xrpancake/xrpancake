@@ -47,7 +47,7 @@ const DashboardScreen = () => {
   return (
     <Wrapper>
       <Hero>XRPP Earnings Dashboard</Hero>
-      <p className="text"></p>
+      <p className="text">Under maintenance. Will be available shortly</p>
       <FormWrapper>
         <Textfield placeholder="Paste your address here" name="wallet" />
       </FormWrapper>
