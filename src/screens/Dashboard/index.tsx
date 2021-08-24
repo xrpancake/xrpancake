@@ -1,4 +1,5 @@
 import DashboardGrid from '@components/DashboardGrid';
+import PayGrid from '@components/PayGrid';
 import Hero from '@components/Hero';
 import Textfield from '@components/Library/Textfield';
 
@@ -8,6 +9,7 @@ import XrpIcon from '@components/Icons/Xrp';
 import TimeIcon from '@components/Icons/Time';
 
 import { Wrapper, FormWrapper } from './styles';
+import Button from '@atlaskit/button';
 
 const DashboardScreen = () => {
   const items = [
@@ -44,6 +46,32 @@ const DashboardScreen = () => {
       icon: <TimeIcon />,
     },
   ];
+
+  const cards = [
+    {
+      id: 1,
+      title: `Total XRP paid to holders`,
+      text: (
+        <div>
+          0 ~ <span>$0.00</span>
+        </div>
+      ),
+    },
+    {
+      id: 2,
+      title: `Total CAKE paid to holders`,
+      text: (
+        <div>
+          0 ~ <span>$0.00</span>
+        </div>
+      ),
+    },
+    {
+      id: 3,
+      title: `Next payout`,
+      text: <div>00:00:00</div>,
+    },
+  ];
   return (
     <Wrapper>
       <Hero>XRPP Earnings Dashboard</Hero>
@@ -52,6 +80,7 @@ const DashboardScreen = () => {
         <Textfield placeholder="Paste your address here" name="wallet" />
       </FormWrapper>
       <DashboardGrid items={items} />
+      <PayGrid items={cards} />
     </Wrapper>
   );
 };

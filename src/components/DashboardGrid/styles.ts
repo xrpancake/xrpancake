@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
   position: relative;
   display: block;
   padding: 0;
-  margin: 40px auto 130px;
+  margin: 40px auto;
   max-width: 1023px;
   @media screen and (min-width: 768px) {
     padding: 0 20px;
