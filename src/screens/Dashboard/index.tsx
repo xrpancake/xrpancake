@@ -17,7 +17,9 @@ import PaperIcon from '@components/Icons/Paper';
 
 const DashboardScreen = () => {
   const [wallet, setWallet] = useState('');
-  const [xrp, setXrp] = useState('0');
+  const [xrpTotal, setXrpTotal] = useState('0');
+  const [cakeTotal, setCakeTotal] = useState('0');
+  const [xrpp, setXrpp] = useState('0');
 
   const Web3 = require('web3');
   const provider = 'https://bsc-dataseed1.binance.org:443';
@@ -31,6 +33,22 @@ const DashboardScreen = () => {
       outputs: [{ name: 'balance', type: 'uint256' }],
       type: 'function',
     },
+    {
+      constant: true,
+      inputs: [],
+      name: 'getTotalMycoinDividendsDistributed',
+      outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+      stateMutability: 'view',
+      type: 'function',
+    },
+    {
+      constant: true,
+      inputs: [],
+      name: 'getTotalMycoin2DividendsDistributed',
+      outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+      stateMutability: 'view',
+      type: 'function',
+    },
   ];
   const xrppAddress = '0x5760ed58d66ba764c4c3073fc58aa471ea442efc';
 
@@ -39,10 +57,30 @@ const DashboardScreen = () => {
   async function getXRPPBalance() {
     const result = await contract.methods.balanceOf(wallet).call();
     const format = Web3Client.utils.fromWei(result);
-    setXrp(numberWithCommas(format));
+    setXrpp(numberWithCommas(format));
   }
 
+  async function getTotalXrpDividendsDistributed() {
+    const result = await contract.methods
+      .getTotalMycoinDividendsDistributed()
+      .call();
+    const format = Web3Client.utils.fromWei(result);
+    setXrpTotal((format / 1e21).toFixed(0));
+  }
+
+  async function getTotalCakeDividendsDistributed() {
+    const result = await contract.methods
+      .getTotalMycoin2DividendsDistributed()
+      .call();
+    const format = Web3Client.utils.fromWei(result);
+    setCakeTotal(format);
+  }
+
+  console.log(cakeTotal);
+
   useEffect(() => {
+    getTotalXrpDividendsDistributed();
+    getTotalCakeDividendsDistributed();
     if (Web3Client.utils.isAddress(wallet)) {
       getXRPPBalance();
     }
@@ -53,35 +91,35 @@ const DashboardScreen = () => {
     {
       id: 1,
       title: `Your XRPP holdings`,
-      value: <div>{xrp} XRPP</div>,
+      value: <div>{xrpp} XRPP</div>,
       icon: <Tokens />,
     },
-    {
-      id: 2,
-      title: `Total XRP earned`,
-      value: (
-        <div>
-          0 ~ <span>$0.00</span>
-        </div>
-      ),
-      icon: <XrpIcon />,
-    },
-    {
-      id: 3,
-      title: `Total CAKE earned`,
-      value: (
-        <div>
-          0 ~ <span>$0.00</span>
-        </div>
-      ),
-      icon: <CakeIcon />,
-    },
-    {
-      id: 4,
-      title: `Last payout`,
-      value: <div>Never</div>,
-      icon: <TimeIcon />,
-    },
+    // {
+    //   id: 2,
+    //   title: `Total XRP earned`,
+    //   value: (
+    //     <div>
+    //       0 ~ <span>$0.00</span>
+    //     </div>
+    //   ),
+    //   icon: <XrpIcon />,
+    // },
+    // {
+    //   id: 3,
+    //   title: `Total CAKE earned`,
+    //   value: (
+    //     <div>
+    //       0 ~ <span>$0.00</span>
+    //     </div>
+    //   ),
+    //   icon: <CakeIcon />,
+    // },
+    // {
+    //   id: 4,
+    //   title: `Last payout`,
+    //   value: <div>Never</div>,
+    //   icon: <TimeIcon />,
+    // },
   ];
 
   const cards = [
@@ -90,7 +128,7 @@ const DashboardScreen = () => {
       title: `Total XRP paid to holders`,
       text: (
         <div>
-          0 ~ <span>$0.00</span>
+          {xrpTotal} ~ <span>$0.00</span>
         </div>
       ),
     },
@@ -99,7 +137,7 @@ const DashboardScreen = () => {
       title: `Total CAKE paid to holders`,
       text: (
         <div>
-          0 ~ <span>$0.00</span>
+          {cakeTotal} ~ <span>$0.00</span>
         </div>
       ),
     },
@@ -128,7 +166,7 @@ const DashboardScreen = () => {
         </Form>
       </FormWrapper>
       <DashboardGrid items={items} />
-      <PayGrid items={cards} />
+      {/* <PayGrid items={cards} /> */}
     </Wrapper>
   );
 };
